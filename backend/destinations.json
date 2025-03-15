@@ -1,0 +1,50 @@
+[
+  {
+    "city": "Pondicherry (Puducherry)",
+    "country": "India",
+    "clues": [
+      "A former French colony with a distinct European influence, known for its colorful colonial architecture.",
+      "A serene coastal town offering a blend of French charm and Indian spirituality."
+    ],
+    "fun_fact": [
+      "Auroville, an experimental township, is located nearby.",
+      "The city's French Quarter is known for its quiet, tree-lined streets."
+    ],
+    "trivia": [
+      "Visit the Sri Aurobindo Ashram for a spiritual retreat.",
+      "Enjoy a leisurely stroll along Promenade Beach and savor French-inspired cuisine."
+    ]
+  },
+  {
+    "city": "Khajuraho",
+    "country": "India",
+    "clues": [
+      "Known for its ancient Hindu and Jain temples with intricate sculptures, a UNESCO World Heritage Site.",
+      "A town that offers a glimpse into India's rich artistic and architectural heritage."
+    ],
+    "fun_fact": [
+      "The temples are famous for their erotic sculptures, depicting various aspects of life.",
+      "The Kandariya Mahadeva Temple is one of the largest and most ornate temples in Khajuraho."
+    ],
+    "trivia": [
+      "Explore the Western Group of Temples for the most elaborate sculptures.",
+      "Attend the Khajuraho Dance Festival for a cultural experience."
+    ]
+  },
+  {
+    "city": "Hampi",
+    "country": "India",
+    "clues": [
+      "A UNESCO World Heritage Site with ancient temple ruins, the former capital of the Vijayanagara Empire.",
+      "A historical site offering a unique blend of architecture, nature, and a laid-back atmosphere."
+    ],
+    "fun_fact": [
+      "The Virupaksha Temple is still an active place of worship.",
+      "The Stone Chariot at Vittala Temple is an iconic and intricately carved structure."
+    ],
+    "trivia": [
+      "Explore the ruins of the Vijayanagara Empire on foot or by bicycle.",
+      "Enjoy the unique landscape with its boulder-strewn hills and riverside temples."
+    ]
+  }
+]
