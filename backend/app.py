@@ -327,6 +327,57 @@ def update_user_score(user_score: UserScore):
         "is_new_high_score": is_new_high_score
     }
 
+# Save game score
+@app.post("/api/save-score")
+def save_score(user_score: UserScore):
+    db = SessionLocal()
+    user = db.query(UserProfile).filter(UserProfile.username == user_score.username).first()
+    
+    if not user:
+        # Create user if they don't exist
+        new_user = UserProfile(
+            username=user_score.username,
+            invite_code=str(uuid.uuid4())[:8],
+            high_score=user_score.score
+        )
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+        result = {
+            "username": new_user.username,
+            "high_score": new_user.high_score,
+            "is_new_high_score": True
+        }
+    else:
+        is_new_high_score = user_score.score > user.high_score
+        if is_new_high_score:
+            user.high_score = user_score.score
+            db.commit()
+        
+        result = {
+            "username": user.username,
+            "high_score": user.high_score,
+            "is_new_high_score": is_new_high_score
+        }
+    
+    db.close()
+    return result
+
+# Get leaderboard
+@app.get("/api/leaderboard")
+def get_leaderboard():
+    db = SessionLocal()
+    users = db.query(UserProfile).order_by(UserProfile.high_score.desc()).limit(10).all()
+    db.close()
+    
+    return [
+        {
+            "username": user.username,
+            "high_score": user.high_score
+        }
+        for user in users
+    ]
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -69,12 +69,12 @@ body {
 .clue-item {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   position: relative;
 }
 
 .clue-item:before {
-  content: "✈️";
+  content: "✈️ ";
   position: absolute;
   left: 0;
 }
@@ -248,4 +248,170 @@ body {
     transform: translateY(100vh) rotate(720deg);
     opacity: 0;
   }
+}
+
+.welcome-text {
+  font-size: 1rem;
+  color: var(--secondary);
+  margin-top: 0.5rem;
+}
+
+.challenge-banner {
+  background-color: var(--primary-light);
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.challenge-banner h3 {
+  margin-bottom: 0.5rem;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.popup-content h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.challenge-card {
+  background-color: var(--light);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  border: 1px solid #ddd;
+}
+
+.challenge-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.challenge-body {
+  padding: 1.5rem;
+}
+
+.challenge-body p {
+  margin-bottom: 0.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.close-button {
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #eee;
+}
+
+.leaderboard-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.leaderboard-container h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: var(--light);
+  transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboard-rank {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.leaderboard-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.leaderboard-score {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Top 3 styling */
+.leaderboard-item:nth-child(1) .leaderboard-rank {
+  background-color: gold;
+  color: #333;
+}
+
+.leaderboard-item:nth-child(2) .leaderboard-rank {
+  background-color: silver;
+  color: #333;
+}
+
+.leaderboard-item:nth-child(3) .leaderboard-rank {
+  background-color: #cd7f32; /* Bronze */
+  color: white;
 }

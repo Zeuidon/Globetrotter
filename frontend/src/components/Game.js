@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import AnswerFeedback from './AnswerFeedback';
-import DestinationCard from './DestinationCard';
 
 const API_URL = 'http://localhost:8000/api';
 
@@ -49,10 +48,10 @@ function Game({ onAnswer }) {
       trivia: gameData.trivia
     });
     
-    // Create confetti if answer is correct
-    if (isCorrect) {
-      createConfetti();
-    }
+    // // Create confetti if answer is correct
+    // if (isCorrect) {
+    //   createConfetti();
+    // }
   };
 
   const createConfetti = () => {
@@ -72,13 +71,18 @@ function Game({ onAnswer }) {
       
       // Remove confetti after animation completes
       setTimeout(() => {
-        document.body.removeChild(confetti);
+        if (document.body.contains(confetti)) {
+          document.body.removeChild(confetti);
+        }
       }, 5000);
     }
   };
 
   const handleNextDestination = () => {
-    fetchDestination();
+    // Only allow proceeding to next destination if answer was correct
+    if (feedback && feedback.isCorrect) {
+      fetchDestination();
+    }
   };
 
   if (loading) {
@@ -120,7 +124,7 @@ function Game({ onAnswer }) {
         />
       )}
       
-      {selectedAnswer !== null && (
+      {selectedAnswer !== null && feedback && feedback.isCorrect && (
         <button className="next-button" onClick={handleNextDestination}>
           Next Destination
         </button>
