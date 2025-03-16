@@ -1,9 +1,10 @@
-# Globetrotter: Gamified Learning Platform
+# Globetrotter: Interactive Gaming and User Engagement Platform
 
 ## 🚀 Overview
 Globetrotter is a full-stack web app where users receive cryptic clues about famous places and must guess the destination through interactive challenges. 
 The game features a scoring system and leaderboards to enhance engagement. 
 It features a dynamic front-end with a robust FastAPI-based backend, ensuring seamless user experiences and efficient data management.
+**Documentation:** https://docs.google.com/document/d/1F0Zeb67cA8aR02g9xHsBHzblqLZR42o-55z5lojCs9w/edit?usp=sharing
 
 ## 🛠️ Tech Stack
 ### Frontend
